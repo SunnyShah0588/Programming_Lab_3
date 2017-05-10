@@ -1,0 +1,23 @@
+staffpc@shailesh:~/Desktop/test$ flex --header-file=lexer.h --outfile=lexer.c cal.l
+staffpc@shailesh:~/Desktop/test$ bison --output-file=parser.c  --defines=parser.h --warning=all --feature=all cal.y
+staffpc@shailesh:~/Desktop/test$ gcc -fopenmp lexer.c parser.c main.c
+staffpc@shailesh:~/Desktop/test$ ./a.out 
+
+ Enter no. of files: 3
+
+ Enter file names: a1
+a2
+a3
+
+
+ Successful parsing by thread ID=0	 Result of expression= 28
+
+ Successful parsing by thread ID=2	 Result of expression= 10
+
+ Successful parsing by thread ID=2	 Result of expression= 4
+
+ Successful parsing by thread ID=1	 Result of expression= 56
+
+ Parsing Completed
+staffpc@shailesh:~/Desktop/test$ 
+
